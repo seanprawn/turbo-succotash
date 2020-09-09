@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final int SPLASH_DISPLAY_LENGTH = 1000;
+        final int SPLASH_DISPLAY_LENGTH = 3000;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 

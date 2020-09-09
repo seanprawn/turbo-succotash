@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gads_leaderboard.R;
 
@@ -47,11 +49,15 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
+//        final TextView textView = root.findViewById(R.id.section_label);
+        final RecyclerView recycle_view = root.findViewById(R.id.recycler_view);
+         final LinearLayoutManager leaderboardLayoutManager = new LinearLayoutManager(recycle_view.getContext());
+        recycle_view.setLayoutManager(leaderboardLayoutManager);
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+//                textView.setText(s);
+
             }
         });
         return root;
